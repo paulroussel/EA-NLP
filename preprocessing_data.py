@@ -62,10 +62,10 @@ def vec2string (list):
 
 
 def preprocessing(df,nom_colonne):
-    df['content'] = df['content'].apply(lambda x: remove_punct(x))
-    df['content'] = df['content'].apply(lambda x: tokenization(x.lower()))
-    df['content'] = df['content'].apply(lambda x: remove_stopwords(x))
-    df['content'] = df['content'].apply(lambda x: stemming(x))
-    df['content'] = df['content'].apply(lambda x: lemmatizer(x))
-    df['content'] = df['content'].apply(lambda x: vec2string(x))
+    df[nom_colonne] = df[nom_colonne].apply(lambda x: remove_punct(x))
+    df[nom_colonne] = df[nom_colonne].apply(lambda x: tokenization(x.lower()))
+    df[nom_colonne] = df[nom_colonne].apply(lambda x: remove_stopwords(x))
+    df[nom_colonne] = df[nom_colonne].apply(lambda x: stemming(x))
+    df[nom_colonne] = df[nom_colonne].apply(lambda x: lemmatizer(x))
+    df[nom_colonne] = df[nom_colonne].apply(lambda x: vec2string(x))
     return(df)
